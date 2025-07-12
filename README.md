@@ -66,9 +66,9 @@ My Blog is a responsive PHP and MySQL–powered blogging platform featuring user
 All SQL migrations are in the `migrations/` folder and can be imported via phpMyAdmin or the MySQL CLI:
 
 ```bash
-mysql -u root -p myblog < [001_create_users_table.sql](http://_vscodecontentref_/0)
-mysql -u root -p myblog < [002_create_posts_table.sql](http://_vscodecontentref_/1)
-mysql -u root -p myblog < [003_create_likes_table.sql](http://_vscodecontentref_/2)
+mysql -u root -p myblog < [001_create_users_table.sql]
+mysql -u root -p myblog < [002_create_posts_table.sql]
+mysql -u root -p myblog < [003_create_likes_table.sql]
 ```
 
 ##Usage
