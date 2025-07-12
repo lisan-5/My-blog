@@ -19,7 +19,8 @@ My Blog is a responsive PHP and MySQL–powered blogging platform featuring user
 - Role-based access control: **User** vs. **Admin**  
 - CRUD operations for posts (publish/draft) with WYSIWYG‐style editor support  
 - Commenting system with threaded replies  
-- Like/unlike posts with real-time count  
+- Like/unlike posts with real-time count
+- Commenting other people's blogs 
 - Search posts by title or author  
 - Responsive UI built on Bootstrap 4  
 - Light/dark mode toggle with CSS variables and persisted in `localStorage`  
@@ -71,7 +72,7 @@ mysql -u root -p myblog < [002_create_posts_table.sql]
 mysql -u root -p myblog < [003_create_likes_table.sql]
 ```
 
-##Usage
+## Usage
 Register a new account at /auth/register.php.
 Log in and navigate to Create Post or My Posts in the dashboard.
 Publish or save drafts, then view them on the homepage or via search.
