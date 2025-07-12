@@ -17,7 +17,8 @@ if ($user_id) {
 }
 
 $sql = "SELECT posts.title, posts.content, posts.created_at, users.username, posts.id, 
-               (SELECT COUNT(*) FROM likes WHERE post_id = posts.id) AS like_count
+               (SELECT COUNT(*) FROM likes WHERE post_id = posts.id) AS like_count, 
+               (SELECT COUNT(*) FROM comments WHERE post_id = posts.id) AS comment_count
         FROM posts 
         JOIN users ON posts.user_id = users.id 
         WHERE posts.status = 'published'
@@ -54,6 +55,11 @@ $posts = $result->fetch_all(MYSQLI_ASSOC);
                 <p class="card-text">
                     <small class="text-muted">
                         <?php echo $post['like_count']; ?> Likes
+                    </small>
+                </p>
+                <p class="card-text">
+                    <small class="text-muted">
+                        <a href="view_post.php?id=<?php echo $post['id']; ?>"><?php echo $post['comment_count']; ?> Comments</a>
                     </small>
                 </p>
                 <?php if ($user_id): ?>
