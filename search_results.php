@@ -24,8 +24,9 @@ if (!isset($_GET['query'])) {
 $query = $_GET['query'];
 $search_query = "%" . $query . "%";
 
- $sql = "SELECT posts.*, users.username, 
-               (SELECT COUNT(*) FROM likes WHERE post_id = posts.id) AS like_count
+$sql = "SELECT posts.*, users.username, 
+               (SELECT COUNT(*) FROM likes WHERE post_id = posts.id) AS like_count, 
+               (SELECT COUNT(*) FROM comments WHERE post_id = posts.id) AS comment_count
         FROM posts 
         JOIN users ON posts.user_id = users.id 
         WHERE posts.status = 'published' AND (posts.title LIKE ? OR users.username LIKE ?)
@@ -64,6 +65,11 @@ $posts = $result->fetch_all(MYSQLI_ASSOC);
                 <p class="card-text">
                     <small class="text-muted">
                         <?php echo $post['like_count']; ?> Likes
+                    </small>
+                </p>
+                <p class="card-text">
+                    <small class="text-muted">
+                        <a href="view_post.php?id=<?php echo $post['id']; ?>"><?php echo $post['comment_count']; ?> Comments</a>
                     </small>
                 </p>
                 <?php if ($user_id): ?>
