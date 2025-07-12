@@ -49,8 +49,8 @@ My Blog is a responsive PHP and MySQL–powered blogging platform featuring user
 4. Import the migration files in order:
    - `migrations/001_create_users_table.sql`  
    - `migrations/002_create_posts_table.sql`  
-   - `migrations/003_create_likes_table.sql`  
-   *(Optionally add a `comments` table if you implement comment persistence separately.)*  
+   - `migrations/003_create_likes_table.sql`
+   - `migrations/004_create_comments_table.sql`
 5. Configure your database connection and base URL in:  
    - `config/db.php`  
    - `config/config.php`  
