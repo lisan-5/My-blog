@@ -1,0 +1,165 @@
+/* Theme variables */
+:root {
+    /* Light theme */
+    --bg-gradient-start: #f4f4f4;
+    --bg-gradient-end: #e0eafc;
+    --text-color: #333;
+    --card-bg: #fff;
+    --card-shadow: rgba(0,0,0,0.1);
+    --navbar-bg: #f8f9fa;
+    --navbar-text: #000;
+    --footer-bg: #343a40;
+    --footer-text: #fff;
+    --btn-primary-bg: #007bff;
+    --btn-primary-hover: #0056b3;
+    --btn-secondary-border: #6c757d;
+}
+
+.dark-mode {
+    /* Dark theme */
+    --bg-gradient-start: #101010;
+    --bg-gradient-end: #2c2c2c;
+    --text-color: #e0e0e0;
+    --card-bg: #191818;
+    --card-shadow: rgba(0,0,0,0.5);
+    --navbar-bg: #1e1e1e;
+    --navbar-text: #e0e0e0;
+    --footer-bg: #121212;
+    --footer-text: #e0e0e0;
+    --btn-primary-bg: #bb86fc;
+    --btn-primary-hover: #985eff;
+    --btn-secondary-border: #e0e0e0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, var(--bg-gradient-start), var(--bg-gradient-end));
+    color: var(--text-color);
+    transition: background 0.5s ease, color 0.5s ease;
+}
+
+.navbar {
+    background-color: var(--navbar-bg) !important;
+    box-shadow: 0 4px 4px var(--card-shadow);
+}
+
+.navbar-brand, .navbar-nav .nav-link {
+    color: var(--navbar-text) !important;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link.active { 
+  font-weight: 600; 
+  border-bottom: 2px solid var(--btn-primary-bg);
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--card-shadow);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-title {
+    color: var(--btn-primary-bg);
+}
+
+.btn-primary {
+    background-color: var(--btn-primary-bg);
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: var(--btn-primary-hover);
+}
+
+.footer {
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+}
+
+.btn-outline-secondary {
+    color: var(--btn-secondary-border);
+    border-color: var(--btn-secondary-border);
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--btn-secondary-border);
+    color: var(--footer-text);
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.search-form {
+    width: 250px;
+}
+
+/* Likes section styling */
+.like-form {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.like-form .like-btn {
+    margin-right: 8px;
+}
+.like-count {
+    font-size: 0.9em;
+    color: var(--text-color);
+}
+
+.logo {
+    font-family: 'Pacifico', cursive;
+    color: #1e90ff;
+    font-size: 2rem;
+    transition: transform 0.3s ease-in-out, color 0.5s ease-in-out;
+    animation: logo-pulse 4s ease-in-out infinite;
+}
+
+.dark-mode .table tbody tr:hover { 
+    background: lighten(var(--card-bg), 5%); 
+}
+
+.logo:hover {
+    transform: scale(1.2) rotate(-3deg);
+}
+
+@keyframes logo-pulse {
+    0%, 100% { color: #1e90ff; text-shadow: 0 0 5px rgba(30,144,255,0.7), 0 0 10px rgba(30,144,255,0.5); }
+    50% { color: #4169e1; text-shadow: 0 0 10px rgba(65,105,225,0.8), 0 0 20px rgba(65,105,225,0.6); }
+}
+
+.container {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.dark-mode .table {
+    background-color: var(--card-bg);
+}
+.dark-mode .table th,
+.dark-mode .table td {
+    color: var(--text-color);
+    border-color: var(--card-shadow) !important;
+}
+.dark-mode .table thead th {
+    background-color: var(--navbar-bg);
+}
+.dark-mode .table tbody tr {
+    background-color: var(--card-bg);
+}
